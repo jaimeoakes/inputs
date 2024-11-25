@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Box</title>
+</head>
+<body>
+
+    <input placeholder="Name" class="input-name" onkeydown="buttonEnter(event)">
+
+    <button onclick="displayName()">Submit</button>
+
+    <p class="js-display-name"></p>
+
+</body>
+
+<script>
+      function displayName(){
+        const displayName = document.querySelector('.input-name').value;
+        console.log(displayName)
+
+        document.querySelector('.js-display-name').
+          innerHTML = `Your name is: ${displayName}`;
+      }
+
+      /* A funcao de cima faz a mesma da funcao de baixo:
+
+      function displayName(){
+        const displayName = document.querySelector('.input-name');
+        console.log(displayName)
+
+        document.querySelector('.display-name').
+          innerHTML = `Your name is: ${displayName.value}`;
+      }
+      */
+
+      function buttonEnter(event){
+        console.log(event)
+        if (event.key === 'Enter'){
+          displayName()
+        }
+      }
+
+
+</script>
+</html>
